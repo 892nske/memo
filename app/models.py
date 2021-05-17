@@ -19,3 +19,6 @@ class Tags(models.Model):
 class TagName(models.Model):
     tag_id = models.IntegerField()
     tag_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.tag_name
