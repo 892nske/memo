@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'memo',
         'USER': 'rdsuser',
         'PASSWORD': 'rds%5678',
-        'HOST': '52.197.228.239',
+        'HOST': 'rdsnske.c7sczatjnphy.ap-northeast-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

@@ -6,3 +6,9 @@
   <div>
     {{ memo.text | linebreaks | urlize }}
 </div>
+
+{% for tag in tags %}
+  <div>
+    {{ tag.tag.tag_name }}
+  </div>
+{% endfor %}

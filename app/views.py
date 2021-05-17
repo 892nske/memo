@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Memo
+from .models import Memo, Tags
 from django.shortcuts import get_object_or_404
 from .forms import MemoForm
 
@@ -11,7 +11,8 @@ def index(request):
 
 def detail(request, memo_id):
     memo = get_object_or_404(Memo, id=memo_id)
-    return render(request, 'app/detail.html', {'memo': memo})
+    tags = Tags.objects.filter(memo=memo_id)
+    return render(request, 'app/detail.html', {'memo': memo, 'tags': tags})
 
 
 def new_memo(request):
