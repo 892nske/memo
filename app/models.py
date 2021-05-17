@@ -15,6 +15,14 @@ class Tags(models.Model):
     memo = models.ForeignKey('Memo', on_delete=models.CASCADE)
     tag = models.ForeignKey('TagName', on_delete=models.CASCADE)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["memo", "tag"],
+                name="tags_unique"
+            ),
+        ]
+
 
 class TagName(models.Model):
     tag_id = models.IntegerField()
